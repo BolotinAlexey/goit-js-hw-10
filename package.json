@@ -1,0 +1,24 @@
+{
+  "name": "goit-js-hw-10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url /parcel-project-template/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BolotinAlexey/goit-js-hw-10.git"
+  },
+  "keywords": [],
+  "author": "Oleksii Bolotin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BolotinAlexey/goit-js-hw-10/issues"
+  },
+  "homepage": "https://github.com/BolotinAlexey/goit-js-hw-10#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}
