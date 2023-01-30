@@ -1,5 +1,8 @@
 const URL = 'https://restcountries.com/v3.1/name/';
 const FILTER = '?fields=name,capital,population,flag,languages';
+import handlerData from './handlerData';
+import handlerError from './handlerError';
+
 export default class ApiService {
   constructor() {
     this.word = '';
@@ -7,7 +10,7 @@ export default class ApiService {
   fetchToApi() {
     fetch(URL.concat(this.word).concat(FILTER))
       .then(response => response.json())
-      .then(rendering)
-      .catch(console.error);
+      .then(handlerData)
+      .catch(handlerError);
   }
 }
