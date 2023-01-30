@@ -1,5 +1,5 @@
 const URL = 'https://restcountries.com/v3.1/name/';
-const FILTER = '?fields=name,capital,population,flag,languages';
+const FILTER = '?fields=name,capital,population,flags,languages';
 import handlerData from './handlerData';
 import handlerError from './handlerError';
 

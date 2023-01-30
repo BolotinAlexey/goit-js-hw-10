@@ -7,8 +7,8 @@ export default function renderInfo({
   languages,
 }) {
   return `
-    <div class="info__title">
-  <img src="${flags.png}" alt="${name.official}" class="info__img" />
+    <div class="info__header">
+  <img src="${flags.png}" alt="${flags.alt}" class="info__img" />
   <h2 class="info__name">${name.official}</h2>
 </div>
 <ul class="info__list">
@@ -24,11 +24,8 @@ export default function renderInfo({
     <h4 class="item__key">Languages:</h4>
     <span class="item__value">
     <ul class="list__languages">
-  <li class="languages__item"></li>
    ${renderLanguages(languages)}
     </ul>
-   
- 
     </span>
   </li>
 </ul>

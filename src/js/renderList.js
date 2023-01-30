@@ -1,14 +1,8 @@
-export default function renderList({
-  name,
-  capital,
-  population,
-  flags,
-  languages,
-}) {
+export default function renderList({ name, flags }) {
   return `
-  <li class="item">
-  <img src="${flags.png}" alt="" class="flag" />
-  <span class="name">${name.official}</span>
+  <li class="country-list__item">
+  <img src="${flags.png}" alt="${flags.alt}" class="country-list__flag" />
+  <span class="country-list__name">${name.official}</span>
 </li>
     `;
 }
