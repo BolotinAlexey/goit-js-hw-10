@@ -8,10 +8,6 @@ import clearFields from './clearFields';
 const { inputEl, listEl, infoEl } = getRef();
 export default function handlerData(data) {
   clearFields();
-
-  if (data.status === 404) {
-    return Promise.reject('Oops, there is no country with that name');
-  }
   if (data.length > 10) {
     Notiflix.Notify.info(
       'Too many matches found. Please enter a more specific name.'
@@ -22,8 +18,9 @@ export default function handlerData(data) {
     infoEl.insertAdjacentHTML('beforeend', renderInfo(data[0]));
     return;
   }
+  const str = data.map(renderList).join('');
 
-  listEl.insertAdjacentHTML('beforeend', data.map(renderList).join(''));
+  listEl.insertAdjacentHTML('beforeend', str);
   listEl.addEventListener('click', onClickToCountry);
 }
 
