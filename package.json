@@ -5,7 +5,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url /parcel-project-template/"
+    "build": "parcel build src/index.html --public-url /goit-js-hw-10/"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,6 @@
   "bugs": {
     "url": "https://github.com/BolotinAlexey/goit-js-hw-10/issues"
   },
-  "homepage": "https://github.com/BolotinAlexey/goit-js-hw-10#readme",
   "devDependencies": {
     "parcel": "^2.8.3"
   },
