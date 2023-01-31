@@ -10,8 +10,7 @@ export default function handlerData(data) {
   clearFields();
 
   if (data.status === 404) {
-    Notiflix.Notify.warning('Oops, there is no country with that name');
-    return;
+    return Promise.reject('Oops, there is no country with that name');
   }
   if (data.length > 10) {
     Notiflix.Notify.info(
