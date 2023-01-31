@@ -2,10 +2,12 @@ import Notiflix from 'notiflix';
 import renderList from './renderList';
 import renderInfo from './renderInfo';
 import getRef from './getRefs';
+import ApiService from './fetchCountries';
+import clearFields from './clearFields';
 
-const { listEl, infoEl } = getRef();
+const { inputEl, listEl, infoEl } = getRef();
 export default function handlerData(data) {
-  listEl.innerHTML = infoEl.innerHTML = '';
+  clearFields();
 
   if (data.status === 404) {
     Notiflix.Notify.warning('Oops, there is no country with that name');
@@ -23,4 +25,15 @@ export default function handlerData(data) {
   }
 
   listEl.insertAdjacentHTML('beforeend', data.map(renderList).join(''));
+  listEl.addEventListener('click', onClickToCountry);
+}
+
+function onClickToCountry(e) {
+  if (e.target.tagName === 'SPAN' || e.target.tagName === 'IMG') {
+    const currentWord = e.target.parentNode.dataset.name;
+    inputEl.value = currentWord;
+    const api = new ApiService(currentWord);
+    api.fetchToApi();
+    listEl.removeEventListener('click', onClickToCountry);
+  }
 }

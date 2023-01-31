@@ -4,8 +4,8 @@ import handlerData from './handlerData';
 import handlerError from './handlerError';
 
 export default class ApiService {
-  constructor() {
-    this.word = '';
+  constructor(word = '') {
+    this.word = word;
   }
   fetchToApi() {
     fetch(URL.concat(this.word).concat(FILTER))
